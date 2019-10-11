@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      * {
+        color: rgba(255, 255, 255, 0.8);
+        font-family: system-ui;
+      }
+
+      .clocks {
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
+        text-align: right;
+      }
+
+      .location {
+        display: inline-block;
+        margin-right: 2em;
+      }
+
+      .location:last-child {
+        margin-right: 0;
+      }
+
+      .location-name {
+        line-height: 1em;
+        font-size: 24px;
+        font-weight: 300;
+        text-align: right;
+      }
+
+      .time {
+        line-height: 1em;
+        font-size: 64px;
+        font-weight: 300;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="clocks" class="clocks">
+
+      <div class="location">
+        <div class="location-name">Los Angeles</div>
+        <div class="time" data-time-zone="America/Los_Angeles"></div>
+      </div>
+
+      <div class="location">
+        <div class="location-name">Denver</div>
+        <div class="time" data-time-zone="America/Denver"></div>
+      </div>
+
+      <div class="location">
+        <div class="location-name">Kansas City</div>
+        <div class="time" data-time-zone="America/Chicago"></div>
+      </div>
+
+      <div class="location">
+        <div class="location-name">Washington</div>
+        <div class="time" data-time-zone="America/New_York"></div>
+      </div>
+
+    </div>
+
+    <script>
+      function tick() {
+        const formatOptions = {
+          hour: "numeric",
+          minute: "numeric",
+          hour12: false
+        }
+
+        const now = new Date()
+
+        const $times = document.getElementsByClassName("time")
+
+        for (let $time of $times) {
+          const formatter = new Intl.DateTimeFormat([], { timeZone: $time.getAttribute("data-time-zone"), ...formatOptions })
+          $time.innerText = formatter.format(now)
+        }
+      }
+
+      tick()
+      window.setInterval(tick, 1000)
+    </script>
+
+  </body>
+</html>
