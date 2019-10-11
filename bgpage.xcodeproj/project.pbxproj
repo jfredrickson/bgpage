@@ -30,6 +30,7 @@
 		A9D3D50B23510CBE004F46AC /* .bgpage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = .bgpage.html; sourceTree = "<group>"; };
 		A9D3D50C23510E08004F46AC /* WebViewInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewInjector.swift; sourceTree = "<group>"; };
 		A9D3D50E235110A8004F46AC /* COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		A9D3D51023513CA7004F46AC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +47,7 @@
 		A9D3D4EE2350E7A3004F46AC = {
 			isa = PBXGroup;
 			children = (
+				A9D3D51023513CA7004F46AC /* .gitignore */,
 				A9D3D50B23510CBE004F46AC /* .bgpage.html */,
 				A9D3D50E235110A8004F46AC /* COPYING */,
 				A9D3D5032350E970004F46AC /* README.md */,
@@ -81,6 +83,7 @@
 				A9D3D4F32350E7A3004F46AC /* Sources */,
 				A9D3D4F42350E7A3004F46AC /* Frameworks */,
 				A9D3D4F52350E7A3004F46AC /* CopyFiles */,
+				A9D3D50F23513522004F46AC /* Create Distribution Package */,
 			);
 			buildRules = (
 			);
@@ -123,6 +126,28 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A9D3D50F23513522004F46AC /* Create Distribution Package */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Create Distribution Package";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "DISTPATH=${PROJECT_DIR}/dist\nDISTFILE=${DISTPATH}/bgpage.zip\nmkdir -p ${DISTPATH}\nif [ -f ${DISTFILE} ] ; then rm ${DISTFILE} ; fi\ncd ${BUILT_PRODUCTS_DIR}\nzip ${DISTFILE} bgpage\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9D3D4F32350E7A3004F46AC /* Sources */ = {

@@ -22,4 +22,4 @@ DerivedData/
 /*.gcno
 
 .DS_Store
-
+dist/
