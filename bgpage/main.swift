@@ -24,12 +24,12 @@ guard let screen = NSScreen.screens.first else {
     exit(1)
 }
 
-let defaultFileName = ".bgpage.html"
+let defaultContentFile = ".bgpage.html"
 let fileManager = FileManager.default
-let url = fileManager.homeDirectoryForCurrentUser.appendingPathComponent(defaultFileName)
+let contentFileUrl = fileManager.homeDirectoryForCurrentUser.appendingPathComponent(defaultContentFile)
 
-if (!fileManager.fileExists(atPath: url.path)) {
-    print("Content file not found: \(url.path)")
+if (!fileManager.fileExists(atPath: contentFileUrl.path)) {
+    print("Content file not found: \(contentFileUrl.path)")
     exit(1)
 }
 
@@ -37,14 +37,14 @@ let webView = WKWebView()
 let webViewInjector = WebViewInjector()
 webView.navigationDelegate = webViewInjector
 webView.setValue(false, forKey: "drawsBackground")
-webView.loadFileURL(url, allowingReadAccessTo: url)
+webView.loadFileURL(contentFileUrl, allowingReadAccessTo: contentFileUrl)
 
 let contentChanged: FSEventStreamCallback = { (streamRef, clientCallbackInfo, numEvents, eventPaths, eventFlags, eventIds) in
     webView.reload()
 }
 
 var fsEventStreamContext = FSEventStreamContext(version: 0, info: nil, retain: nil, release: nil, copyDescription: nil)
-if let fsEventStream = FSEventStreamCreate(kCFAllocatorDefault, contentChanged, &fsEventStreamContext, [url.path] as CFArray, UInt64(kFSEventStreamEventIdSinceNow), 0, UInt32(kFSEventStreamCreateFlagFileEvents)) {
+if let fsEventStream = FSEventStreamCreate(kCFAllocatorDefault, contentChanged, &fsEventStreamContext, [contentFileUrl.path] as CFArray, UInt64(kFSEventStreamEventIdSinceNow), 0, UInt32(kFSEventStreamCreateFlagFileEvents)) {
     FSEventStreamScheduleWithRunLoop(fsEventStream, CFRunLoopGetMain(), "kCFRunLoopDefaultMode" as CFString)
     FSEventStreamStart(fsEventStream)
 }
