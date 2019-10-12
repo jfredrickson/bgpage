@@ -39,6 +39,16 @@ webView.navigationDelegate = webViewInjector
 webView.setValue(false, forKey: "drawsBackground")
 webView.loadFileURL(url, allowingReadAccessTo: url)
 
+let contentChanged: FSEventStreamCallback = { (streamRef, clientCallbackInfo, numEvents, eventPaths, eventFlags, eventIds) in
+    webView.reload()
+}
+
+var fsEventStreamContext = FSEventStreamContext(version: 0, info: nil, retain: nil, release: nil, copyDescription: nil)
+if let fsEventStream = FSEventStreamCreate(kCFAllocatorDefault, contentChanged, &fsEventStreamContext, [url.path] as CFArray, UInt64(kFSEventStreamEventIdSinceNow), 0, UInt32(kFSEventStreamCreateFlagFileEvents)) {
+    FSEventStreamScheduleWithRunLoop(fsEventStream, CFRunLoopGetMain(), "kCFRunLoopDefaultMode" as CFString)
+    FSEventStreamStart(fsEventStream)
+}
+
 let screenRect = screen.frame
 let windowRect = NSRect(x: 0, y: 0, width: screenRect.width, height: screenRect.height)
 let windowStyle: NSWindow.StyleMask = [.borderless]
