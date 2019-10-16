@@ -9,15 +9,15 @@
 #echo Packaging version ${versionNumber} build ${buildNumber}
 
 # Create zip package
-#distPath=${PROJECT_DIR}/dist
-#distFile=${distPath}/bgpage-${versionNumber}.zip
-#mkdir -p ${distPath}
-#rm -f ${distFile}
-#zip ${distFile} -j ${BUILT_PRODUCTS_DIR}/bgpage ${PROJECT_DIR}/agent/bgpage.plist
+distPath=${PROJECT_DIR}/dist
+distFile=${distPath}/bgpage.zip
+mkdir -p ${distPath}
+rm -f ${distFile}
+zip ${distFile} -j ${BUILT_PRODUCTS_DIR}/bgpage ${PROJECT_DIR}/agent/bgpage.plist
 
 # Group distributable files together
-distPath=${PROJECT_DIR}/dist
-mkdir -p ${distPath}
-rm -f ${distPath}/*
-cp ${BUILT_PRODUCTS_DIR}/bgpage ${distPath}
-cp ${PROJECT_DIR}/agent/bgpage.plist ${distPath}
+#distPath=${PROJECT_DIR}/dist
+#mkdir -p ${distPath}
+#rm -f ${distPath}/*
+#cp ${BUILT_PRODUCTS_DIR}/bgpage ${distPath}
+#cp ${PROJECT_DIR}/agent/bgpage.plist ${distPath}
