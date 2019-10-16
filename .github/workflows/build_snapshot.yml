@@ -12,12 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Build
-        run: xcodebuild
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v1
-        with:
-          name: bgpage-${{ github.sha }}
-          path: dist
+        run: GITHUB_SHA=${{ github.sha }} xcodebuild
       - name: Create snapshot
         id: create_snapshot
         uses: actions/create-release@v1.0.0
@@ -33,7 +28,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_snapshot.outputs.upload_url }}
-          asset_path: ./bgpage-${{ github.sha }}
-          asset_name: bgpage-${{ github.sha }}
+          upload_url: ${{ steps.upload_artifact.outputs.upload_url }}
+          asset_path: ./bgpage-${{ github.sha }}.zip
+          asset_name: bgpage-${{ github.sha }}.zip
           asset_content_type: application/zip
