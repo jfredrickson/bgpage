@@ -1,4 +1,4 @@
-name: Build Prerelease
+name: Build snapshot
 
 on:
   push:
@@ -18,17 +18,18 @@ jobs:
         with:
           name: bgpage-${{ github.sha }}
           path: dist
-      - name: Create prerelease
-        id: create_prerelease
+      - name: Create snapshot
+        id: create_snapshot
         uses: actions/create-release@v1.0.0
         with:
+          tag_name: snapshot
           release_name: Build ${{ github.sha }}
           draft: false
           prerelease: true
-      - name: Upload prerelease asset
+      - name: Upload snapshot asset
         uses: actions/upload-release-asset@v1.0.1
         with:
-          upload_url: ${{ steps.create_prerelease.outputs.upload_url }}
+          upload_url: ${{ steps.create_snapshot.outputs.upload_url }}
           asset_path: ./bgpage-${{ github.sha }}.zip
           asset_name: bgpage-${{ github.sha }}.zip
           asset_content_type: application/zip
