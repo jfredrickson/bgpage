@@ -26,6 +26,7 @@
 /* Begin PBXFileReference section */
 		A99D628F2357A1EE00E04AAC /* bgpage.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = bgpage.plist; sourceTree = "<group>"; };
 		A99D62922357B4DF00E04AAC /* dist.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = dist.sh; sourceTree = "<group>"; };
+		A99D62992357CAB800E04AAC /* build.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = build.yml; sourceTree = "<group>"; };
 		A9D3D4F72350E7A3004F46AC /* bgpage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = bgpage; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D3D4FA2350E7A3004F46AC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A9D3D5032350E970004F46AC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -62,9 +63,26 @@
 			path = scripts;
 			sourceTree = "<group>";
 		};
+		A99D62972357CAB800E04AAC /* .github */ = {
+			isa = PBXGroup;
+			children = (
+				A99D62982357CAB800E04AAC /* workflows */,
+			);
+			path = .github;
+			sourceTree = "<group>";
+		};
+		A99D62982357CAB800E04AAC /* workflows */ = {
+			isa = PBXGroup;
+			children = (
+				A99D62992357CAB800E04AAC /* build.yml */,
+			);
+			path = workflows;
+			sourceTree = "<group>";
+		};
 		A9D3D4EE2350E7A3004F46AC = {
 			isa = PBXGroup;
 			children = (
+				A99D62972357CAB800E04AAC /* .github */,
 				A99D62912357B4CB00E04AAC /* scripts */,
 				A99D628E2357A1D300E04AAC /* agent */,
 				A9D3D51023513CA7004F46AC /* .gitignore */,
