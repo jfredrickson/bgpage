@@ -11,7 +11,7 @@
 # Create zip package
 # GITHUB_SHA is passed in from the GitHub Workflows definition.
 distPath=${PROJECT_DIR}/dist
-distFile=${distPath}/bgpage-${GITHUB_SHA}.zip
+distFile=${distPath}/bgpage.zip
 mkdir -p ${distPath}
 rm -f ${distFile}
 zip ${distFile} -j ${BUILT_PRODUCTS_DIR}/bgpage ${PROJECT_DIR}/agent/bgpage.plist

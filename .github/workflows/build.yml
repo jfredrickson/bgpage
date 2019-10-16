@@ -1,17 +1,34 @@
-#name: Build
-#
-#on: [push]
-#
-#jobs:
-#  build:
-#    runs-on: macOS-latest
-#    steps:
-#      - name: Checkout
-#        uses: actions/checkout@v1
-#      - name: Build
-#        run: xcodebuild
-#      - name: Upload artifacts
-#        uses: actions/upload-artifact@v1
-#        with:
-#          name: bgpage
-#          path: dist
+name: Build release
+
+on:
+  push:
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Build
+        run: xcodebuild
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - name: Upload snapshot asset
+        uses: actions/upload-release-asset@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./bgpage.zip
+          asset_name: bgpage-${{ github.ref }}.zip
+          asset_content_type: application/zip
