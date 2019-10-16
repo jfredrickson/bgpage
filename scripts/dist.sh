@@ -9,7 +9,6 @@
 #echo Packaging version ${versionNumber} build ${buildNumber}
 
 # Create zip package
-# GITHUB_SHA is passed in from the GitHub Workflows definition.
 distPath=${PROJECT_DIR}/dist
 distFile=${distPath}/bgpage.zip
 mkdir -p ${distPath}
