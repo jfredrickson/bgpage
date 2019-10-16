@@ -23,7 +23,7 @@ jobs:
           release_name: ${{ github.ref }}
           draft: false
           prerelease: false
-      - name: Upload snapshot asset
+      - name: Upload release asset
         uses: actions/upload-release-asset@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
