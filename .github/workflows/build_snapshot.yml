@@ -15,7 +15,7 @@ jobs:
         run: GITHUB_SHA=${{ github.sha }} xcodebuild
       - name: Create snapshot
         id: create_snapshot
-        uses: actions/create-release@v1.0.0
+        uses: actions/create-release@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -24,7 +24,7 @@ jobs:
           draft: false
           prerelease: true
       - name: Upload snapshot asset
-        uses: actions/upload-release-asset@v1.0.1
+        uses: actions/upload-release-asset@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
