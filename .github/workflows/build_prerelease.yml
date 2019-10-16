@@ -1,0 +1,34 @@
+name: Build Prerelease
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Build
+        run: xcodebuild
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: bgpage-${{ github.ref }}
+          path: dist
+      - name: Create prerelease
+        id: create_prerelease
+        uses: actions/create-release@v1.0.0
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Build ${{ github.ref }}
+          draft: false
+          prerelease: true
+      - name: Upload prerelease asset
+        uses: actions/upload-release-asset@v1.0.1
+        with: ${{ steps.create_prerelease.outputs.upload_url }}
+        asset_path: ./bgpage-${{ github.ref }}.zip
+        asset_name: bgpage-${{ github.ref }}.zip
+        asset_content_type: application/zip

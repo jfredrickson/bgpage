@@ -27,6 +27,7 @@
 		A99D628F2357A1EE00E04AAC /* bgpage.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = bgpage.plist; sourceTree = "<group>"; };
 		A99D62922357B4DF00E04AAC /* dist.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = dist.sh; sourceTree = "<group>"; };
 		A99D62992357CAB800E04AAC /* build.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = build.yml; sourceTree = "<group>"; };
+		A99D629A2357CB1B00E04AAC /* build_prerelease.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = build_prerelease.yml; sourceTree = "<group>"; };
 		A9D3D4F72350E7A3004F46AC /* bgpage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = bgpage; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D3D4FA2350E7A3004F46AC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A9D3D5032350E970004F46AC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				A99D62992357CAB800E04AAC /* build.yml */,
+				A99D629A2357CB1B00E04AAC /* build_prerelease.yml */,
 			);
 			path = workflows;
 			sourceTree = "<group>";
