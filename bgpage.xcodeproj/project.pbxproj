@@ -25,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		A99D628F2357A1EE00E04AAC /* bgpage.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = bgpage.plist; sourceTree = "<group>"; };
-		A99D62902357AE6100E04AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99D62922357B4DF00E04AAC /* dist.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = dist.sh; sourceTree = "<group>"; };
 		A9D3D4F72350E7A3004F46AC /* bgpage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = bgpage; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D3D4FA2350E7A3004F46AC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -88,7 +87,6 @@
 		A9D3D4F92350E7A3004F46AC /* bgpage */ = {
 			isa = PBXGroup;
 			children = (
-				A99D62902357AE6100E04AAC /* Info.plist */,
 				A9D3D4FA2350E7A3004F46AC /* main.swift */,
 				A9D3D50C23510E08004F46AC /* WebViewInjector.swift */,
 			);
@@ -304,7 +302,7 @@
 				DEVELOPMENT_TEAM = 79JQZNXB8V;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/bgpage/Info.plist";
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 123;
 				PRODUCT_BUNDLE_IDENTIFIER = bgpage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -318,7 +316,7 @@
 				DEVELOPMENT_TEAM = 79JQZNXB8V;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/bgpage/Info.plist";
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 123;
 				PRODUCT_BUNDLE_IDENTIFIER = bgpage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
