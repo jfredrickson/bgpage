@@ -24,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A99D628F2357A1EE00E04AAC /* bgpage.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = bgpage.plist; sourceTree = "<group>"; };
 		A9D3D4F72350E7A3004F46AC /* bgpage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = bgpage; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D3D4FA2350E7A3004F46AC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A9D3D5032350E970004F46AC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -44,9 +45,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A99D628E2357A1D300E04AAC /* agent */ = {
+			isa = PBXGroup;
+			children = (
+				A99D628F2357A1EE00E04AAC /* bgpage.plist */,
+			);
+			path = agent;
+			sourceTree = "<group>";
+		};
 		A9D3D4EE2350E7A3004F46AC = {
 			isa = PBXGroup;
 			children = (
+				A99D628E2357A1D300E04AAC /* agent */,
 				A9D3D51023513CA7004F46AC /* .gitignore */,
 				A9D3D50B23510CBE004F46AC /* .bgpage.html */,
 				A9D3D50E235110A8004F46AC /* COPYING */,
@@ -144,7 +154,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "DISTPATH=${PROJECT_DIR}/dist\nDISTFILE=${DISTPATH}/bgpage.zip\nmkdir -p ${DISTPATH}\nif [ -f ${DISTFILE} ] ; then rm ${DISTFILE} ; fi\ncd ${BUILT_PRODUCTS_DIR}\nzip ${DISTFILE} bgpage\n";
+			shellScript = "DISTPATH=${PROJECT_DIR}/dist\nDISTFILE=${DISTPATH}/bgpage.zip\nmkdir -p ${DISTPATH}\nrm -f ${DISTFILE}\nzip ${DISTFILE} -j ${BUILT_PRODUCTS_DIR}/bgpage ${PROJECT_DIR}/agent/bgpage.plist\necho Version: ${CURRENT_PROJECT_VERSION}\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
