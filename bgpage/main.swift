@@ -53,9 +53,20 @@ let screenRect = screen.frame
 let windowRect = NSRect(x: 0, y: 0, width: screenRect.width, height: screenRect.height)
 let windowStyle: NSWindow.StyleMask = [.borderless]
 let window = NSWindow(contentRect: windowRect, styleMask: windowStyle, backing: .buffered, defer: false)
-window.contentView = webView
+window.isOpaque = false
 window.backgroundColor = .clear
-window.level = NSWindow.Level.init(-1)
+window.collectionBehavior = [.transient, .canJoinAllSpaces, .ignoresCycle]
+window.displaysWhenScreenProfileChanges = true
+window.isReleasedWhenClosed = false
+window.isRestorable = false
+window.disableSnapshotRestoration()
+// kCGDesktopWindowLevel is not exposed to Swift, so manually using the calculations found in CGWindowLevel.h:
+// kCGDesktopWindowLevel = ((CGWindowLevel)(kCGMinimumWindowLevel + 20))
+// kCGMinimumWindowLevel = ((CGWindowLevel)(kCGBaseWindowLevel + kCGNumReservedBaseWindowLevels))
+// kCGBaseWindowLevel = ((CGWindowLevel)INT32_MIN)
+// kCGNumReservedBaseWindowLevels = (5)
+window.level = NSWindow.Level.init(Int(Int32.min + 5 + 20))
 window.orderFrontRegardless()
+window.contentView = webView
 
 app.run()
