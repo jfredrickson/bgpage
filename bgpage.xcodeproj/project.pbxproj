@@ -30,7 +30,7 @@
 		A9D3D4F72350E7A3004F46AC /* bgpage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = bgpage; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D3D4FA2350E7A3004F46AC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A9D3D5032350E970004F46AC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		A9D3D50B23510CBE004F46AC /* .bgpage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = .bgpage.html; sourceTree = "<group>"; };
+		A9D3D50B23510CBE004F46AC /* timezones.bgpage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = timezones.bgpage.html; sourceTree = "<group>"; };
 		A9D3D50C23510E08004F46AC /* WebViewInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewInjector.swift; sourceTree = "<group>"; };
 		A9D3D50E235110A8004F46AC /* COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		A9D3D51023513CA7004F46AC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -47,6 +47,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A983AC0A237B4BA5004EE517 /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				A983AC0B237B4BC6004EE517 /* config */,
+				A99D628E2357A1D300E04AAC /* agent */,
+			);
+			path = examples;
+			sourceTree = "<group>";
+		};
+		A983AC0B237B4BC6004EE517 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				A9D3D50B23510CBE004F46AC /* timezones.bgpage.html */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
 		A99D628E2357A1D300E04AAC /* agent */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,11 +99,10 @@
 		A9D3D4EE2350E7A3004F46AC = {
 			isa = PBXGroup;
 			children = (
+				A983AC0A237B4BA5004EE517 /* examples */,
 				A99D62972357CAB800E04AAC /* .github */,
 				A99D62912357B4CB00E04AAC /* scripts */,
-				A99D628E2357A1D300E04AAC /* agent */,
 				A9D3D51023513CA7004F46AC /* .gitignore */,
-				A9D3D50B23510CBE004F46AC /* .bgpage.html */,
 				A9D3D50E235110A8004F46AC /* COPYING */,
 				A9D3D5032350E970004F46AC /* README.md */,
 				A9D3D4F92350E7A3004F46AC /* bgpage */,
