@@ -34,8 +34,6 @@ if (!fileManager.fileExists(atPath: contentFileUrl.path)) {
 }
 
 let webView = WKWebView()
-let webViewInjector = WebViewInjector()
-webView.navigationDelegate = webViewInjector
 webView.setValue(false, forKey: "drawsBackground")
 webView.loadFileURL(contentFileUrl, allowingReadAccessTo: contentFileUrl)
 

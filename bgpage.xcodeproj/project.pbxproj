@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A9D3D4FB2350E7A3004F46AC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3D4FA2350E7A3004F46AC /* main.swift */; };
-		A9D3D50D23510E08004F46AC /* WebViewInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3D50C23510E08004F46AC /* WebViewInjector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,7 +29,6 @@
 		A9D3D4FA2350E7A3004F46AC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A9D3D5032350E970004F46AC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A9D3D50B23510CBE004F46AC /* timezones.bgpage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = timezones.bgpage.html; sourceTree = "<group>"; };
-		A9D3D50C23510E08004F46AC /* WebViewInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewInjector.swift; sourceTree = "<group>"; };
 		A9D3D50E235110A8004F46AC /* COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		A9D3D51023513CA7004F46AC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				A9D3D4FA2350E7A3004F46AC /* main.swift */,
-				A9D3D50C23510E08004F46AC /* WebViewInjector.swift */,
 			);
 			path = bgpage;
 			sourceTree = "<group>";
@@ -191,7 +188,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9D3D4FB2350E7A3004F46AC /* main.swift in Sources */,
-				A9D3D50D23510E08004F46AC /* WebViewInjector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
