@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Program</key>
-	<string>/usr/local/bin/bgpage</string>
+	<string>/Users/YOUR_USERNAME/bin/bgpage</string>
 	<key>RunAtLoad</key>
 	<true/>
 	<key>Label</key>

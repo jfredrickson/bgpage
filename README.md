@@ -4,9 +4,9 @@ A macOS command line utility to display a web page overlaid on the desktop backg
 
 ## Installation
 
-1. Copy `bgpage` to `/usr/local/bin`
+1. Copy `bgpage` somewhere such as `~/bin`
 2. Copy `examples/config/timezones.bgpage.html` to `~/.bgpage.html` and customize
-3. Copy `examples/agent/bgpage.plist` to `~/Library/LaunchAgents` if you want the tool to automatically start upon login
+3. Copy `examples/agent/bgpage.plist` to `~/Library/LaunchAgents` and edit the path to `bgpage` if you want the tool to automatically start upon login
 
 ## Examples
 
